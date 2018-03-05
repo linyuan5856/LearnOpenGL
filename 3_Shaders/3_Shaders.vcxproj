@@ -126,7 +126,6 @@
     <ClCompile Include="Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h" />
     <ClInclude Include="Shader.h" />
   </ItemGroup>
   <ItemGroup>
