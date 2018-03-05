@@ -1,6 +1,7 @@
 #include <glad/glad.h>
 #include <glfw3.h>
 #include <iostream>
+#include "../3_Shaders/Shader.h"
 
 using namespace std;
 
@@ -9,46 +10,18 @@ const int ScreenHeight = 600;
 
 float Trianglevertices[] =
 {
-	//第一个三角形
-	.5f,.5f,0.0f,
-	.5f,-.5f,0.0f,
-	-0.5f,-0.5f,0.0f,
-	-0.5f,0.5f,0.0f
+	//位置              //颜色
+	.5f,.5f,0.0f,      1.0f,0.0f,0.0f,
+	.5f,-.5f,0.0f,     0.0f,1.0f,0.0f,
+	-0.5f,-0.5f,0.0f,  0.0f,0.0f,1.0f,
+	-0.5f,0.5f,0.0f,   0.5f,0.5f,0.5f
 };
 
 unsigned int indices[] =
-{ 
-	0,1,3,
-    1,2,3 
-};
-
-int success;
-char infoLog[512];
-
-const char*vertexShaderSource = R"glsl(
-
-#version 330 core
-
-layout(location =0) in vec3 aPos;
-
-void main()
 {
-gl_Position=vec4(aPos.x,aPos.y,aPos.z,1);
-} 
-)glsl";
-
-const char*fragShaderSouce = R"glsl(
-
-#version 330 core
-
-out vec4 fragColor;
-
-void main(){
-fragColor=vec4(1.0f,.5f,.2f,1.0f);
-}
-
-)glsl";
-
+	0,1,3,
+	1,2,3
+};
 
 void framebuff_size_callback(GLFWwindow*, int width, int height);
 
@@ -77,7 +50,7 @@ int main()
 	{
 		cout << "Error Init GLFW Failed" << endl;
 		return -1;
-	};
+	}
 
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, GLFW_VERSION_MAJOR);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, GLFW_VERSION_MAJOR);
@@ -102,46 +75,9 @@ int main()
 		return -1;
 	}
 
+	Shader ourShader("shader.vs", "shader.fs");
 
-	unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-	glCompileShader(vertexShader);
-
-	glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
-
-	if (!success)
-	{
-		glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
-		cout << "ERROR-->Vertex Shader Complied Failed\n" << infoLog << endl;
-	}
-
-	unsigned int fragShader = glCreateShader(GL_FRAGMENT_SHADER);
-	glShaderSource(fragShader, 1, &fragShaderSouce, NULL);
-	glCompileShader(fragShader);
-
-	glGetShaderiv(fragShader, GL_COMPILE_STATUS, &success);
-	if (!success)
-	{
-		glGetShaderInfoLog(fragShader, 512, NULL, infoLog);
-		cout << "ERROR-->Fragment Shader Complied Failed\n" << infoLog << endl;
-	}
-
-	unsigned int shaderProgram= glCreateProgram();
-	glAttachShader(shaderProgram, vertexShader);
-	glAttachShader(shaderProgram, fragShader);
-	glLinkProgram(shaderProgram);
-
-
-	glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
-	if (!success)
-	{
-		glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-		cout << "Error ShaderProgram Link Failed \n " << infoLog << endl;
-	}
-	glDeleteShader(vertexShader);
-	glDeleteShader(fragShader);
-
-	unsigned int VBO, VAO,EBO;
+	unsigned int VBO, VAO, EBO;
 	glGenVertexArrays(1, &VAO);
 	glBindVertexArray(VAO);
 
@@ -157,8 +93,11 @@ int main()
 	//GL_DYNAMIC_DRAW 数据会改变很多
 	//GL_STREAM_DRAW  数据每次绘制都改变
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
+
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3*sizeof(float)));
+	glEnableVertexAttribArray(1);
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
@@ -171,9 +110,17 @@ int main()
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		glUseProgram(shaderProgram);
+		/*float timeValue = glfwGetTime();
+		float greenValue = sin(timeValue) / 2.0f + .5f;
+		int vertexColorLocation = glGetUniformLocation(ourShader.ID, "uColor");*/
+	
+		ourShader.use();
+		//glUniform4f(vertexColorLocation, .0f, greenValue, .0f, 1.0f);
+
 		glBindVertexArray(VAO);
-		glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,0);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
