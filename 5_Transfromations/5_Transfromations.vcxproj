@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{872441E3-09CE-4A0E-A5B6-C759565BF841}</ProjectGuid>
-    <RootNamespace>My1HelloWindow</RootNamespace>
+    <ProjectGuid>{6EDBEF01-7773-4645-AF96-6A24C558E121}</ProjectGuid>
+    <RootNamespace>My5Transfromations</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -122,7 +122,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\glad\src\glad.c" />
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="..\3_Shaders\Shader.cpp" />
+    <ClCompile Include="..\4_Textures\stb_image.cpp" />
+    <ClCompile Include="Transformations.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\4_Textures\stb_image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader.fs" />
+    <None Include="shader.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
