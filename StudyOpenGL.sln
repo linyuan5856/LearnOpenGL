@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "6.CorrdinateSystems", "6.Co
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "7_Camera", "7_Camera\7_Camera.vcxproj", "{A11F5AE3-A0C7-4C93-87BD-40DA9F3488D2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "8_Color", "8_Color\8_Color.vcxproj", "{61745040-315F-4966-B513-8312433F6818}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +83,14 @@ Global
 		{A11F5AE3-A0C7-4C93-87BD-40DA9F3488D2}.Release|x64.Build.0 = Release|x64
 		{A11F5AE3-A0C7-4C93-87BD-40DA9F3488D2}.Release|x86.ActiveCfg = Release|Win32
 		{A11F5AE3-A0C7-4C93-87BD-40DA9F3488D2}.Release|x86.Build.0 = Release|Win32
+		{61745040-315F-4966-B513-8312433F6818}.Debug|x64.ActiveCfg = Debug|x64
+		{61745040-315F-4966-B513-8312433F6818}.Debug|x64.Build.0 = Debug|x64
+		{61745040-315F-4966-B513-8312433F6818}.Debug|x86.ActiveCfg = Debug|Win32
+		{61745040-315F-4966-B513-8312433F6818}.Debug|x86.Build.0 = Debug|Win32
+		{61745040-315F-4966-B513-8312433F6818}.Release|x64.ActiveCfg = Release|x64
+		{61745040-315F-4966-B513-8312433F6818}.Release|x64.Build.0 = Release|x64
+		{61745040-315F-4966-B513-8312433F6818}.Release|x86.ActiveCfg = Release|Win32
+		{61745040-315F-4966-B513-8312433F6818}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
