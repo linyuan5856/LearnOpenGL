@@ -1,5 +1,4 @@
 #include <glad/glad.h>
-
 #include <iostream>
 #include <glfw3.h>
 

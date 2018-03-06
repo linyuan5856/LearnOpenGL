@@ -21,15 +21,12 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\glad\src\glad.c" />
     <ClCompile Include="..\..\..\GLFW_Inculde\Shader.cpp" />
-    <ClCompile Include="stb_image.cpp" />
+    <ClCompile Include="..\CommonLib\stb_image.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shader.fs" />
     <None Include="shader.vs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -83,8 +80,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\GLFW_Inculde\Includes;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\GLFW_Inculde\Libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\CommonLib\Includes;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\CommonLib\Libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>

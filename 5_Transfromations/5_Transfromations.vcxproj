@@ -70,8 +70,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\Study\LearnOpenGL\GLFW_Inculde\Includes;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Study\LearnOpenGL\GLFW_Inculde\Libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\CommonLib\Includes;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\CommonLib\Libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -123,11 +123,8 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\glad\src\glad.c" />
     <ClCompile Include="..\3_Shaders\Shader.cpp" />
-    <ClCompile Include="..\4_Textures\stb_image.cpp" />
+    <ClCompile Include="..\CommonLib\stb_image.cpp" />
     <ClCompile Include="Transformations.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\4_Textures\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shader.fs" />

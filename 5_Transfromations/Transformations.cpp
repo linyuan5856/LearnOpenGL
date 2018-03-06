@@ -1,8 +1,8 @@
 #include <glad/glad.h>
 #include <glfw3.h>
 #include <iostream>
-#include "../3_Shaders/Shader.h"
-#include "../4_Textures/stb_image.h"
+#include <shader.h>
+#include <stb_image.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -172,7 +172,7 @@ int main()
 		glActiveTexture(GL_TEXTURE1);
 		glBindTexture(GL_TEXTURE_2D, texture2);
 
-		glm::mat4 transform;
+		glm::mat4 transform=glm::mat4(1.0f);
 		transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
 		transform = glm::rotate(transform, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
 
