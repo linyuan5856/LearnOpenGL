@@ -121,8 +121,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\glad\src\glad.c" />
     <ClCompile Include="..\2_HelloTriangle\window.cpp" />
+    <ClCompile Include="..\CommonLib\glad.c" />
     <ClCompile Include="..\CommonLib\Shader.cpp" />
   </ItemGroup>
   <ItemGroup>

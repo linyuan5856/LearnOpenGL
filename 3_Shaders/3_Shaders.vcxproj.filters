@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\glad\src\glad.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="..\2_HelloTriangle\window.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="..\CommonLib\Shader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonLib\glad.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

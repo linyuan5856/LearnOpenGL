@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\glad\src\glad.c" />
-    <ClCompile Include="..\..\..\GLFW_Inculde\Shader.cpp" />
+    <ClCompile Include="..\CommonLib\glad.c" />
+    <ClCompile Include="..\CommonLib\Shader.cpp" />
     <ClCompile Include="..\CommonLib\stb_image.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
