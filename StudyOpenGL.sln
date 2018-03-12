@@ -51,6 +51,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "18_HDR", "18_HDR\18_HDR.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "19_Bloom", "19_Bloom\19_Bloom.vcxproj", "{50F1C7C6-A9B4-4A54-B4CC-18151DCD6C50}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "20_DeferredRendering", "20_DeferredRendering\20_DeferredRendering.vcxproj", "{72F1C1CF-C0B8-4728-B3D1-A883E46FAD0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -251,6 +253,14 @@ Global
 		{50F1C7C6-A9B4-4A54-B4CC-18151DCD6C50}.Release|x64.Build.0 = Release|x64
 		{50F1C7C6-A9B4-4A54-B4CC-18151DCD6C50}.Release|x86.ActiveCfg = Release|Win32
 		{50F1C7C6-A9B4-4A54-B4CC-18151DCD6C50}.Release|x86.Build.0 = Release|Win32
+		{72F1C1CF-C0B8-4728-B3D1-A883E46FAD0D}.Debug|x64.ActiveCfg = Debug|x64
+		{72F1C1CF-C0B8-4728-B3D1-A883E46FAD0D}.Debug|x64.Build.0 = Debug|x64
+		{72F1C1CF-C0B8-4728-B3D1-A883E46FAD0D}.Debug|x86.ActiveCfg = Debug|Win32
+		{72F1C1CF-C0B8-4728-B3D1-A883E46FAD0D}.Debug|x86.Build.0 = Debug|Win32
+		{72F1C1CF-C0B8-4728-B3D1-A883E46FAD0D}.Release|x64.ActiveCfg = Release|x64
+		{72F1C1CF-C0B8-4728-B3D1-A883E46FAD0D}.Release|x64.Build.0 = Release|x64
+		{72F1C1CF-C0B8-4728-B3D1-A883E46FAD0D}.Release|x86.ActiveCfg = Release|Win32
+		{72F1C1CF-C0B8-4728-B3D1-A883E46FAD0D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
